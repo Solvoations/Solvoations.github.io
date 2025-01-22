@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/service.css">
+   
+</head>
+<body data-bs-theme="light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+          
+            <img src="Images/logo-light.png" width="160px" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About US</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="service.html">3D Printing</a></li>
+                  <li><a class="dropdown-item" href="service.html">Web Development</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="service.html">PCB designing</a></li>
+                  <li><a class="dropdown-item" href="service.html">Embedded Firmware</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="service.html">Networking</a></li>
+                  <li><a class="dropdown-item" href="service.html">Sourcing</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Project.html">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blogs</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Career
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Want to Work on a Project</a></li>
+                  <li><a class="dropdown-item" href="#">Internships (Students)</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Full Time</a></li>
+                </ul>
+              </li>
+             
+            </ul>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            <button onclick="cambiarTema()" class="btn rounded-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+              <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+              <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+            </svg></button>
+           
+          </div>
+          
+          
+        
+        </div>
+        
+      </nav>
+     
+        <div class="row">
+          <img src="Images/our.png" class="d-block w-100"alt="">
+        </div>
+       
+        
+                <section id="what-we-do">
+                  
+                  <div class="container-fluid">
+                    <h2 class="section-title mb-2 h1 pt-2">What we do</h2>
+                    <p class="text-center text-muted h5 pt-4">Having and managing a correct marketing strategy is crucial in a fast moving market.</p>
+                    <div class="row mt-5">
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="card">
+                          <div class="card-block block-1">
+                            
+                            
+                              
+					
+                            <h3 class="card-title text-success" >3D Printing</h3>
+                            <p class="card-text">Ability to custom design and print these models, for specific parts and projects.</p>
+                           
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="card">
+                          <div class="card-block block-2">
+                            <h3 class="card-title text-success">Web Development</h3>
+                            <p class="card-text">Ability to custom design and print these models, for specific parts and projects.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="card">
+                          <div class="card-block block-3">
+                            <h3 class="card-title text-success">PCB</h3>
+                            <p class="card-text"> Develop custom pcb and deliver custom-made solutions.</p>
+                      
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="card" > 
+                       
+                          
+                        
+                          <div class="card-block block-4">
+                           
+        
+                            <h3 class="card-title text-success">Embedded Firmware</h3>
+                            
+                            <p class="card-text">Development of theses in addition to hardware and pcb</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                        <div class="card">
+                          <div class="card-block block-5">
+                            <h3 class="card-title text-success">Electronics System Development</h3>
+                            <p class="card-text"> For life problems and projects and other stuff</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md- col-lg-4 col-xl-4">
+                        <div class="card">
+                          <div class="card-block block-6">
+                            <h3 class="card-title text-success">Industry & College Projects</h3>
+                            <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
+                          </div>
+                        </div>
+                          </div> 
+                          
+                    </div>
+                  </div>	
+      
+                </div>
+            </div>
+            <div class="row justify-content-evenly bg-dark text-white mt-4 pb-3">
+              <div class="col-md-3 pt-4">
+                <h5 class="pb-2">Freelancer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> magni cum dolore animi deleniti praesentium commodi <br>laboriosam magnam dicta aspernatur quos perspiciatis,<br> dignissimos quasi eveniet ipsum? Vel dolorum quidem <br> quasi.</p>
+  
+              </div>
+  
+              <div class="col-md-3 pt-4">
+                <h5 class="pb-2">Important links</h5>
+               <p><a href="#" class="link-light text-decoration-none">Home</a><br>
+                <p><a href="#" class="link-light text-decoration-none">About US</a><br>
+                  <p><a href="#" class="link-light text-decoration-none">Contact US</a><br>
+                    <p><a href="#" class="link-light text-decoration-none">Services</a><br>
+                      <p><a href="#" class="link-light text-decoration-none">Projects</a><br>
+                       
+              </div>
+  
+              <div class="col-md-3 pt-4">
+                <h5 class="pb-2"> Contact US</h5>
+                <p>1150 India,Rajasthan<br>
+                  Jodhpur-342008<br>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> : 7766644567</p>
+  
+              </div>
+            </div>
+            <!--copyright-->
+            <div class="row bg-secondary text-white text-center pt-2">
+              <div class="col-12">
+                <p>@Copyright 1999-2021 by Freelancer. All Rights Reserved.</p>
+              </div>
+            </div>
+            <script src="service.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        </div>
+        
+      </section>
+      
+      
+    
+  </body>
+
+</html>
