@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "src": "/",
+        "dest": "/timer.html"
+      },
+      {
+        "src": "/index.html",
+        "status": 301,
+        "headers": { "Location": "/timer.html" }
+      }
+    ]
+  }
+
