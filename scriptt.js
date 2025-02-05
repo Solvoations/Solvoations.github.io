@@ -9,6 +9,27 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
   });
 });
 
+// Scroll Animation
+// gsap.from("#box1",{
+//   x:800,
+//   duration:5,
+//   delay:1
+// })
+// gsap.from("#box2",{
+//   x:-800,
+//   duration:2,
+//   delay:6
+// })
+// gsap.from("#box3",{
+//   y:20,
+//   duration:2,
+//   delay:2
+// })
+
+// gsap.from(".feature-grid",{
+//   stagger:1
+// })
+
 //previous 1
 // // Theme Toggle
 
