@@ -29,7 +29,7 @@ const timer = setInterval(() => {
 
     // Redirect to the main website after 2 seconds
     setTimeout(() => {
-      window.location.href = 'indexx.html'; // Redirect to the main website
+      window.location.href = 'index.html'; // Redirect to the main website
     }, 2000); // 2000 milliseconds = 2 seconds
   }
 }, 1000);

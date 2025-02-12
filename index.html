@@ -1,422 +1,508 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="Images/icon.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--style-->
-    
-    <title>Solvoations</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-    <!--navbar-->
-    <div class="parallax-container">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-         
-          <a class="navbar-brand" href="index.html">
-            <img src="Images/logo-light.png" width="160px" alt="">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About US</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Services
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="service.html">3D Printing</a></li>
-                  <li><a class="dropdown-item" href="service.html">Web Development</a></li>
-                  <li><a class="dropdown-item" href="service.html">App Development</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="service.html">PCB designing</a></li>
-                  <li><a class="dropdown-item" href="service.html">embedded firmware</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="service.html">Networking</a></li>
-                  <li><a class="dropdown-item" href="service.html">Sourcing</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="service.html">Content Writing</a></li>
-                  <li><a class="dropdown-item" href="service.html">Marketing</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact US</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Project.html">Projects</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="blogs.html">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blogs.html">Blogs</a>
-              </li> -->
-              
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Career
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Want to work on a Project</a></li>
-                  <li><a class="dropdown-item" href="#">Interships (students)</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Full time</a></li>
-                </ul>
-              </li> -->
-           
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true"></a>
-              </li>
-            </ul>
-            <!-- <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
-            <div class="navbar">
-              <div id="switch-btn">
-                  <label class="switch">
-                      <input id="checkbox" type="checkbox">
-                      <span class="slider"></span>
-                  </label>
-              </div>
-        </div>
-          
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="Images/icon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solvoations</title>
+  <link rel="stylesheet" href="style-dark.css">
+  <!-- Font Awesome for Icons -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="Images/logo-removebg.png" alt="Solvoations Logo">
+        <span>Solvoations</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+      </ul>
+         <div>
+          <a href="#contact" class="btn">Contact</a>
+         </div>
+    </div>
+  </nav>
+      <!-- Video Background -->
+      <video autoplay muted loop id="video-background">
         
-      </nav>
-    
-    
+        <source src="video/bg-vide.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Innovative Tech Solutions</h1>
+      <p>We bring your ideas to life with cutting-edge technology.</p>
+      <!-- <a href="#features" class="btn">Explore More</a> -->
+    </div>
+  </section>
+
+  <section class="container-service" id="services">
+    <h2>Our Services</h2>
+    <section class="card__container">
       
-      <!--slider-->
-      
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            
-            <img src="Images/pro1.jpg" class="d-block w-100" alt="...">
+      <div class="card__bx" style="--clr: #89ec5b">
+        <div class="card__data">
+          <div class="card__icon">
+            <i class="fas fa-microchip"></i>
           </div>
-          <div class="carousel-item">
-            <img src="Images/pro2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="Images/pro.jpg" class="d-block w-100" alt="...">
+          <div class="card__content">
+            <h3>Embedded</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <a href="#">Read More</a>
           </div>
         </div>
-        
       </div>
-      
-   
-</div>
+      <div class="card__bx" style="--clr: #eb5ae5">
+        <div class="card__data">
+          <div class="card__icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="card__content">
+            <h3>Web Develoment</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
       </div>
-   
-      
+      <div class="card__bx" style="--clr: #5b98eb">
+        <div class="card__data">
+          <div class="card__icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="card__content">
+            <h3>App Development</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  
+  </section>
+
+  <!-- About Us Section -->
+<section id="about" class="about">
+  <div class="about-container">
+    <h2>About Us</h2>
+    <p class="about-description">
+      We are a team of passionate freelancers dedicated to delivering innovative tech solutions. 
+      Our expertise spans across embedded systems, app development, and web development. 
+      We believe in collaboration, creativity, and cutting-edge technology to bring your ideas to life.
+    </p>
+    <p class="about-description">
+      We are a team of passionate freelancers dedicated to delivering innovative tech solutions. 
+      Our expertise spans across embedded systems, app development, and web development. 
+      We believe in collaboration, creativity, and cutting-edge technology to bring your ideas to life.
+    </p>
+
+    <!-- Team Members Grid -->
+    <!-- <div class="team-grid">
+      <div class="team-member">
+        <img src="Images/521111.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>Embedded Systems Engineer</p>
+      </div>
+      <div class="team-member">
+        <img src="Images/bg-img.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>App Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="Images/bus.jpeg" alt="Team Member 3">
+        <h3>Alice Johnson</h3>
+        <p>Web Developer</p>
+      </div>
+    </div> -->
+  </div>
+</section>
+  <!-- Features Section -->
+  <!-- <section id="features" class="features">
+    <h2>Our Services</h2>
+    <div class="feature-grid">
+      <div id="box1" class="feature-card">
+        <i class="fas fa-microchip"></i>
+        <h3>Embedded Systems</h3>
+        <p>Design and development of custom embedded solutions.</p>
+      </div>
+      <div id="box2" class="feature-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>App Development</h3>
+        <p>Cross-platform mobile apps for iOS and Android.</p>
+      </div>
+      <div id="box3" class="feature-card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Responsive and dynamic websites tailored to your needs.</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Projects Section -->
+  <!-- <section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300" alt="Project 1">
+        <h3>Smart Home Automation</h3>
+        <p>An IoT-based home automation system.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300" alt="Project 2">
+        <h3>E-Commerce App</h3>
+        <p>A mobile app for online shopping.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300" alt="Project 3">
+        <h3>Portfolio Website</h3>
+        <p>A responsive website for a creative professional.</p>
+      </div>
+    </div>
+  </section> -->
+  <section id="projects" class="projects">
+    <h2>Our Projects</h2>
     
-    <!--container-->
-    <div class="container-fluid">
-      <!--tagline-->
-      <div class="row">
-        <div class="col-12">
-          <h3 class="display-6 text-center mt-5 mb-5 text-danger">"Unlocking the future,One Line of Code at a Time Embrace the Power of Freelance Tech Talent."</h3>
-        
-        </div>
-      </div>
-      <!--feature-->
-      <div class="row justify-content-evenly pt-2 pb-3">
-        <div class="col-md-3 text-center mt-2">
-         <h1><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-code text-primary" viewBox=" 0 0 16 16">
-          <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/>
-        </svg></h1> 
-         <h5 class="text-success">Development</h5>
-        <p class="text-primary">Landkit is built to make your life easier.Variables,build tooling,documentation, and reusable components</p>
-        </div>
-          <div class="col-md-3 text-center mt-2">
-            <h1><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-easel-fill text-danger" viewBox="0 0 16 16">
-              <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11H7.5v2.5a.5.5 0 0 0 1 0V11h2.592l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H9.046L8.473.337z"/>
-            </svg></h1> 
-            <h5 class="text-success">Hardware</h5>
-            <p class="text-primary">Landkit is built to make your life easier.Variables,build tooling,documentation, and reusable components</p>
-          </div>
-            <div class="col-md-3 text-center mt-2">
-              <h1><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-calendar-range-fill text-success" viewBox="0 0 16 16">
-                <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 7V5H0v5h5a1 1 0 1 1 0 2H0v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9h-6a1 1 0 1 1 0-2h6z"/>
-              </svg> 
-            </h1>
-              <h5 class="text-success">Firmware</h5>
-              <p class="text-primary">Landkit is built to make your life easier.Variables,build tooling,documentation, and reusable components</p>
-            </div>
-          </div>
-          <!--line-->
-           <hr>
+  <div class="portfolio-min-h-screen portfolio-bg-black portfolio-p-8">
+    <!-- Filter Buttons -->
+    <div id="portfolio-filter-buttons" class="portfolio-mb-8 portfolio-flex portfolio-flex-wrap portfolio-gap-4"></div>
 
-           <!--growth-->
-           <div class="row justify-content-evenly pt-3 pb-2">
-            <div class="col-md-5">
-              <img src="Images/buis.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-6">
-              <h5 class="mt-3 text-success">Website Development</h5>
-             
-              <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-success" style="width: 45%"></div>
-              </div>
-              <h5 class="mt-3 text-success">App Development</h5>
-             
-              <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-danger" style="width: 55%"></div>
-              </div>
-              <h5 class="mt-3 text-success">Firmware Development</h5>
-              <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-info" style="width: 60%"></div>
-              </div>
-              <!-- <h5 class="mt-3 text-success">Software Development</h5>
-              <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-warning" style="width: 75%"></div>
-              </div> -->
-              <h5 class="mt-3 text-success">Hardware Development</h5>
-              <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-warning" style="width: 65%"></div>
-              </div>
-              <h5 class="mt-3 text-success">Marketing</h5>
-              <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-primary" style="width: 75%"></div>
-              </div>
+    <!-- Projects Grid -->
+    <div id="portfolio-projects-grid" class="portfolio-grid portfolio-gap-6 portfolio-sm-grid-cols-2 portfolio-lg-grid-cols-3"></div>
+  </div>
+</section>
+  <!-- Testimonials Section -->
+  <!-- <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Solvoations delivered an outstanding product on time and within budget."</p>
+        <h3>- John Doe</h3>
+      </div>
+      <div class="testimonial-card">
+        <p>"Their team is highly skilled and professional. Highly recommended!"</p>
+        <h3>- Jane Smith</h3>
+      </div>
+    </div>
+  </section> -->
+ 
 
-            </div>
-           </div>
-           <hr>
-           <!--contact-->
-           <div class="row justify-content-evenly pt-3 pb-2">
-            <div class="col-md-4">
-              <img src="Images/callc.jpg" class="img-fluid" alt="">
-            </div>
-           
-            <div class="col-md-3 mt-3">
-              <h3 class="mb-3 text-primary">Contact Form</h3>
-              <form>
-                   
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label text-danger">Full Name</label>
-                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-                 </div>
+    <!-- Product Section -->
+<section id="about" class="about">
+  <div class="about-container">
+    <h2>Our Products</h2>
+    <p class="about-description">
+      We are a team of passionate freelancers dedicated to delivering innovative tech solutions. 
+      Our expertise spans across embedded systems, app development, and web development. 
+      We believe in collaboration, creativity, and cutting-edge technology to bring your ideas to life.
+    </p>
+    <!-- <p class="about-description">
+      We are a team of passionate freelancers dedicated to delivering innovative tech solutions. 
+      Our expertise spans across embedded systems, app development, and web development. 
+      We believe in collaboration, creativity, and cutting-edge technology to bring your ideas to life.
+    </p> -->
 
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label text-danger">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else.</div>
-                </div>
-             
-
-                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label text-danger">Message</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-              
-                <div class="text-center text-primary">
-                  <button type="submit ">Submit</button>
-                </div>
-                
-              
-              </form>
-            </div>
-            
-           </div>
-           
-           <!--faq-->
-
-
-<h1 class="text-center mb-0 mt-5 text-primary">Our Gallery</h1>
-<p class="text-center mb-4 mt-3 text-danger">Click an image to reveal the lightbox</p>
-
-<section class="photo-gallery">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
-      <div class="col">
-        <a class="gallery-item" href="Images/Device 1.jpg">
-          <img src="Images/Device 1.jpg" class="img-fluid" alt="Lorem ipsum dolor sit amet">
-        </a>
+    <!-- Team Members Grid -->
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="Images/521111.jpg" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>Embedded Systems Engineer</p>
       </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/dev5.jpg">
-          <img src="Images/dev 27.jpg" class="img-fluid" alt="Ipsum lorem dolor sit amet">
-        </a>
+      <div class="team-member">
+        <img src="Images/bg-img.jpg" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>App Developer</p>
       </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/Vinay.jpg">
-          <img src="Images/Vinay.jpg" class="img-fluid" alt="Dolor lorem ipsum sit amet">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/dev 10.jpg">
-          <img src="Images/dev 10.jpg" class="img-fluid" alt="Sit amet lorem ipsum dolor">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/dev 16.jpg">
-          <img src="Images/dev 16.jpg" class="img-fluid" alt="Aut ipsam deserunt nostrum quo">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/dev 15.jpg">
-          <img src="Images/dev 15.jpg" class="img-fluid" alt="Nulla ex nihil eligendi tempora">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/Vinay 3.jpg">
-          <img src="Images/Vinay 3.jpg" class="img-fluid" alt="Nemo perspiciatis voluptatum">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/dev 27.jpg">
-          <img src="Images/dev5.jpg" class="img-fluid" alt="Accusantium consequuntur modi">
-        </a>
-      </div>
-      <div class="col">
-        <a class="gallery-item" href="Images/vinay 4.jpg">
-          <img src="Images/vinay 4.jpg" class="img-fluid" alt="Dolore asperiores reprehenderit">
-        </a>
+      <div class="team-member">
+        <img src="Images/bus.jpeg" alt="Team Member 3">
+        <h3>Alice Johnson</h3>
+        <p>Web Developer</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<div class="modal fade lightbox-modal" id="lightbox-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-    <div class="modal-content">
-      <button type="button" class="btn-fullscreen-enlarge" aria-label="Enlarge fullscreen">
-        <svg class="bi"><use href="#enlarge"></use></svg>
-      </button>
-      <button type="button" class="btn-fullscreen-exit d-none" aria-label="Exit fullscreen">
-        <svg class="bi"><use href="#exit"></use></svg>
-      </button>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      <div class="modal-body">
-        <div class="lightbox-content">
-          <!-- JS content here -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-  
-  <div class="row justify-content-evenly pt-5 pb-5">
-    <div class="col-md-10">
-      <h3 class="text-center pb-4 text-primary">FAQ</h3>
-
-
-      <div class="accordion accordion-flush border" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              1.	What kind of projects can I find on this platform?
-
-            </button>
-          </h2>
-
-          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Answer:  Our platform offers a wide range of projects, from web development, 3D-printing, PCB development, electronic system development and networking solution. You can find projects that match your skills and interests.
-              </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              2.	How can I ensure the safety of my payments and work on this platform?
-
-            </button>
-          </h2>
-
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Answer:  We have built-in security measures to protect both freelancers and clients. All payments are securely processed through the platform, and we have a dispute resolution process in case of any issues.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              3.	How do I report a problem or dispute with a client or freelancer?
-
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Answer:  If you encounter any issues or disputes, you can contact our customer support team. We have a dedicated process to help resolve conflicts and ensure a fair outcome.</div>
-
-        </div>
-      </div>
+  <section class="faq" id="faq">
+    <div class="wrapper">
+      <h2>FAQs</h2>
       
-      
-      </div>
-    </div>
-
+      <div class="container">
+        <div class="question">
+          What services do you offer?
+        </div>
+        <div class="answercont">
+          <div class="answer">
+            We provide end-to-end solutions in software development, embedded firmware, electronics design, hardware prototyping, and app development. We also develop custom products from scratch based on client requirements.<br><br>
     
+          </div>
+        </div>
+      </div>
+      
+        <div class="container">
+        <div class="question">
+          Can you develop a complete product from concept to production?
+        </div>
+        <div class="answercont">
+          <div class="answer">
+            Yes! We specialize in taking ideas from prototype to production, including circuit design, firmware, software, and mechanical integration.<br><br>
+    
+          </div>
+        </div>
+      </div>
+      
+          <div class="container">
+        <div class="question">
+          Do you offer OEM products and customization?
+        </div>
+        <div class="answercont">
+          <div class="answer">
+            Yes, we have a range of OEM products and also provide customized solutions tailored to specific industry needs.<br><br>
+    
+   
+          </div>
+        </div>
+      </div>
+     
+      <div class="container">
+        <div class="question">
+          Which industries do you serve?
+        </div>
+        <div class="answercont">
+          <div class="answer">
+            We work with IoT, automation, consumer electronics, industrial control, automotive, and medical devices, among others.
+       
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="question">
+          How can I collaborate with you for a project?
+        </div>
+        <div class="answercont">
+          <div class="answer">
+            You can reach out via email or contact form with your project details, and we will discuss the best approach based on your requirements.<br><br>
+    
+   
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Quick Access Links Section -->
+<section class="quick-access">
+  <div class="quick-access-container">
+    <!-- Short Description -->
+    <div class="quick-access-description">
+      <h3>Solvoations</h3>
+      <p>We bring your ideas to life with cutting-edge technology. Our expertise spans across embedded systems, app development, and web development.</p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
   </div>
-  <hr>
+</section>
 
+<!-- Scroll to Top Icon -->
+<div id="scroll-to-top" class="scroll-to-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Solvoations. All rights reserved.</p>
+  </footer>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="scriptt.js"></script>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      // GSAP Scroll Animations
+      gsap.registerPlugin(ScrollTrigger);
   
-
+      // Hero Section Animation
+      gsap.from(".hero-content h1", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top center",
+        },
+      });
   
+      gsap.from(".hero-content p", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top center",
+        },
+      });
+  
+      // Services Section Animation
+      gsap.from(".container-service h2", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".container-service",
+          start: "top center",
+        },
+      });
+  
+      gsap.from(".card__bx", {
+        opacity: 0,
+        y: 50,
+        //stagger: 0.2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".container-service",
+          start: "top center",
+        },
+      });
+  
+      // About Section Animation
+      gsap.from(".about h2", {
+        opacity: 0,
+        y: 50,
 
-          <!--footer-->
-          <div class="row justify-content-evenly bg-dark text-white p1-2 pb-5 mt-4 ">
-            <div class="col-md-3 pt-4">
-              <h5 class="pb-2">Solvoations</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> magni cum dolore animi deleniti praesentium commodi <br>laboriosam magnam dicta aspernatur quos perspiciatis,<br> dignissimos quasi eveniet ipsum? Vel dolorum quidem <br> quasi.</p>
+        stagger: 0.2,
+        duration: 1,
+        //delay: 0.5,
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top center",
+        },
+      });
+  
+      gsap.from(".about-description", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top center",
+        },
+      });
+  
+      // Projects Section Animation
+      gsap.from(".projects h2", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: ".projects",
+          start: "top center",
+        },
+      });
 
-            </div>
-
-            <div class="col-md-3 pt-4">
-              <h5 class="pb-2">Important links</h5>
-              <p><a href="index.html" class="link-light text-decoration-none">Home</a><br>
-                <p><a href="about.html" class="link-light text-decoration-none">About US</a><br>
-                  <p><a href="contact.html" class="link-light text-decoration-none">Contact US</a><br>
-                    <p><a href="service.html" class="link-light text-decoration-none">Services</a><br>
-                      <p><a href="Project.html" class="link-light text-decoration-none">Projects</a><br>
-                       
-            </div>
-
-            <div class="col-md-3 pt-4">
-              <h5 class="pb-2"> Contact US</h5>
-              <div class="contact-us">
-        
-                        
-                <li><a class="link-light text-decoration-none" href="tel:+917424858358">Tel: +91 74248 58358</a></li>
-                
-                <li><a class="link-light text-decoration-none" href="https://github.com/Solvoations">Github</a></li>
-              
-                <li><a class="link-light text-decoration-none" href="mailto:solvoations@gmail.com">Email</a></li>
-            </div>
-            
-               
-            </div>
-          </div>
-          <!--copyright-->
-          <div class="row bg-secondary text-white text-center pt-2">
-            <div class="col-12">
-              <p>@Copyright 2025. All Rights Reserved.</p>
-            </div>
-          </div>
-
-           
-    </div>
-          
-          <!--container end-->
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="index.js"></script> 
-  </body>
+      gsap.from(".projects", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay:0.3,
+        scrollTrigger: {
+          trigger: ".projects",
+          start: "top center",
+        },
+      });
+    
+      //products Section Animation
+      gsap.from(".team-grid", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        delay: 0.7,
+        scrollTrigger: {
+          trigger: ".team-grid",
+          start: "top center",
+        },
+      });
+  
+      // FAQs Section Animation
+      gsap.from(".faq h2", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".faq",
+          start: "top center",
+        },
+      });
+  
+      gsap.from(".container", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".faq",
+          start: "top center",
+        },
+      });
+  
+      // Contact Section Animation
+      gsap.from(".contact h2", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".contact",
+          start: "top center",
+        },
+      });
+  
+      gsap.from("#contact-form", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: ".contact",
+          start: "top center",
+        },
+      });
+    </script>
+</body>
 </html>

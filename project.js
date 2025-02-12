@@ -10,8 +10,6 @@ const tema0scuro=()=>{
   const cambiarTema=()=>{
     document.querySelector("body").getAttribute("data-bs-theme")==="light"?
     tema0scuro():temaClaro();
-   
-   
   }
   
   var modalInfo = {
