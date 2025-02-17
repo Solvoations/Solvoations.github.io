@@ -9,6 +9,30 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
   });
 });
 
+//navbar// Toggle Hamburger Menu
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+
+// Hide Navbar on Scroll Down, Show on Scroll Up
+let prevScrollPos = window.pageYOffset;
+
+window.onscroll = function () {
+  const currentScrollPos = window.pageYOffset;
+  const navbar = document.querySelector('nav');
+
+  if (prevScrollPos > currentScrollPos) {
+    // Scrolling Up
+    navbar.style.top = '0';
+  } else {
+    // Scrolling Down
+    navbar.style.top = '-80px'; /* Adjust based on navbar height */
+  }
+
+  prevScrollPos = currentScrollPos;
+};
+
 //faqs
 let question = document.querySelectorAll(".question");
 

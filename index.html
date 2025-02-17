@@ -15,28 +15,38 @@
   <nav>
     <div class="navbar-container">
       <div class="logo">
-        <img src="Images/logo-removebg.png" alt="Solvoations Logo">
-        <span>Solvoations</span>
+        <a href="#home">
+          <img src="Images/logo-removebg.png" alt="Solvoations Logo">
+          <span>Solvoations</span>
+        </a>
+       
       </div>
-      <ul class="nav-links">
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#faq">FAQs</a></li>
-        <!-- <li><a href="#contact">Contact</a></li> -->
       </ul>
-         <div>
-          <a href="#contact" class="btn">Contact</a>
-         </div>
+      <div>
+        <!-- <a href="#contact" class="btn">Contact</a> -->
+        <a href="#contact">
+          <button class="glow-on-hover" type="button">Contact</button>
+        </a>
+      </div>
     </div>
   </nav>
       <!-- Video Background -->
-      <video autoplay muted loop id="video-background">
+      <!-- <video autoplay muted loop id="video-background">
         
-        <source src="video/bg-vide.mp4" type="video/mp4">
+        <source src="video/bg-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
+      </video> -->
 
   <!-- Hero Section -->
   <section id="home" class="hero">
