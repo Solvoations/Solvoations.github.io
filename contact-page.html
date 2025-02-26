@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(14, 98%, 50%);
+  --black-color: hsl(0, 0%, 0%);
+  --black-color-light: hsl(0, 0%, 40%);
+  --white-color: hsl(0, 0%, 95%);
+  --title-color: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 35%);
+  --text-color-light: hsl(0, 0%, 64%);
+  --body-color: hsl(0, 0%, 87%);
+  --container-color: hsl(0, 0%, 83%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Bai Jamjuree", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s; /* Pour le Dark theme */
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 4rem 2rem;
+}
+
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  background-color: var(--black-color);
+  padding: 1.1rem 1.5rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  border-radius: 0.75rem;
+  transition: background-color 0.4s;
+}
+
+.button i {
+  font-size: 1.25rem;
+}
+
+/*=============== CONTACT ===============*/
+.contact {
+  padding-bottom: 0;
+}
+
+.contact__container {
+  position: relative;
+  grid-template-rows: 300px max-content max-content;
+  row-gap: 0;
+}
+
+.contact__mail {
+  position: relative;
+  background-color: var(--black-color);
+  border-radius: 0.75rem;
+  padding: 5rem 1.5rem 2.5rem;
+  margin-top: -2.5rem;
+  transition: background-color 0.4s;
+}
+
+.contact__title {
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact__form,
+.contact__group {
+  display: grid;
+  row-gap: 1.25rem;
+}
+
+.contact__form {
+  position: relative;
+}
+
+.contact__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+
+.contact__input,
+.contact__button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  outline: none;
+  border: none;
+}
+
+.contact__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  border: 2.2px solid var(--black-color-light);
+  border-radius: 0.75rem;
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-medium);
+  transition: border 0.4s background-color 0.4s;
+}
+
+.contact__input::placeholder {
+  color: var(--text-color-light);
+  transition: opacity 0.4s;
+}
+
+.contact__input:focus {
+  border: 2.2px solid var(--white-color);
+}
+
+.contact__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+
+.contact__label {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--black-color);
+  padding: 8px;
+  pointer-events: none;
+  transition: top 0.4s, opacity 0.4s, background-color 0.4s;
+  opacity: 0;
+}
+
+.contact__form .contact__area {
+  height: 10rem;
+}
+
+.contact__area textarea {
+  resize: none;
+  padding-top: 1rem;
+}
+
+.contact__button {
+  background-color: var(--first-color);
+  cursor: pointer;
+}
+
+/* Opaque placeholder */
+.contact__input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Move label up & sticky label */
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown)
+  .contact__input:not(:focus)
+  + .contact__label {
+  opacity: 1;
+  top: -16px;
+}
+
+
+
+
+
+.contact__message {
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+ 
+  .contact__container {
+    grid-template-columns: 500px;
+    justify-content: center;
+  }
+  .contact__group {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+   .section {
+    padding-block: 7rem 2rem;
+  }
+ 
+  .contact__container {
+    grid-template-columns: 440px 670px;
+    grid-template-rows: initial;
+    padding-bottom: 2rem;
+  }
+  .contact__mail {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: 7rem 5.5rem 7.5rem;
+    margin-top: 0;
+  }
+  .contact__title {
+    font-size: var(--h3-font-size);
+    text-align: initial;
+  }
+  .contact__box {
+    height: 60px;
+  }
+  .contact__form .contact__area {
+    height: 11rem;
+  }
+  .contact__button {
+    margin-top: 1.25rem;
+    width: max-content;
+  }
+ 
+ 
+  .contact__message {
+    bottom: -2.5rem;
+  }
+}
+
+
+
+
+
+
+
+/* Contact Section */
+.contact {
+  padding: 60px 15px; /* Base padding for smaller screens */
+  text-align: left;
+  background: transparent;
+  background-image: url('Images/bg-img.jpg'); /* Add your image path here */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* Ensures the section takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+.contact h2 {
+  font-size: 1.8rem; /* Base font size for smaller screens */
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align form items to the left */
+  width: 100%; /* Full width for flexibility */
+  max-width: 600px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%; /* Full width by default */
+  padding: 12px; /* Increased padding for better touch targets */
+  margin: 10px 0; /* Slightly increased margin for spacing */
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  font-size: 1rem; /* Consistent font size */
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+#contact-form textarea {
+  min-height: 150px; /* Increased minimum height for better usability */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.glow-on-hover {
+  width: 200px; /* Increased width for better visibility */
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem; /* Increased font size for readability */
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #6a11cb, #000, #fff, #7a00ff);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (up to 600px, e.g., mobile) */
+@media (max-width: 600px) {
+  .contact {
+    padding: 40px 10px; /* Further reduced padding */
+  }
+
+  .contact h2 {
+    font-size: 1.5rem; /* Smaller heading */
+    text-align: center; /* Center heading on mobile */
+  }
+
+  #contact-form {
+    align-items: center; /* Center form items on mobile */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 100%; /* Full width on small screens */
+    padding: 14px; /* Increased padding for larger touch targets */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+  }
+
+  .glow-on-hover {
+    width: 250px; /* Larger button width for mobile */
+    height: 60px; /* Increased height for better touch target */
+    padding: 0; /* No additional padding needed with fixed width/height */
+    font-size: 1.1rem; /* Larger font size for better readability */
+  }
+}
+
+/* Medium screens (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact {
+    padding: 80px 20px; /* Moderate padding */
+  }
+
+  .contact h2 {
+    font-size: 2rem; /* Slightly larger heading */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 500px; /* Slightly smaller max-width */
+    padding: 12px; /* Consistent padding */
+  }
+
+  .glow-on-hover {
+    width: 200px; /* Default button width for tablets */
+    font-size: 1rem; /* Default font size */
+  }
+}
+
+/* Large screens (desktops, 901px and up) */
+@media (min-width: 901px) {
+  .contact {
+    padding: 100px 20px; /* Original padding for desktops */
+  }
+
+  .contact h2 {
+    font-size: 2.5rem; /* Larger heading */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 550px; /* Original max-width */
+    padding: 12px; /* Consistent padding */
+  }
+
+  .glow-on-hover {
+    width: 200px; /* Default button width for desktops */
+    padding: 12px 24px; /* Larger button padding */
+    font-size: 1.1rem; /* Larger font size */
+  }
+}
+
+.contact {
+    padding: 80px 15px; /* Further reduced padding for smaller screens */
+  }
+
+  .contact h2 {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    padding: 10px; /* Smaller padding for mobile */
+  }
+
+  #contact-form button {
+    padding: 8px 16px; /* Smaller padding for mobile */
+    font-size: 0.8rem; /* Smaller font size for mobile */
+  }
+
+
+
+
+  .contact {
+    padding: 60px 10px; /* Minimal padding for very small screens */
+  }
+
+  .contact h2 {
+    font-size: 1.0rem; /* Even smaller font size for very small screens */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    padding: 8px; /* Minimal padding for very small screens */
+  }
+
+  #contact-form button {
+    padding: 6px 12px; /* Minimal padding for very small screens */
+    font-size: 0.8rem; /* Even smaller font size for very small screens */
+  }
+
+
+
+
+   /* Contact Section */
+   .contact {
+    padding: 150px 110px;
+    text-align: left;
+    background: transparent;
+    background-image: url('Images/bg-img.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: relative;
+    overflow: hidden;
+  }
+  .contact h2{
+    font-size: 2.3rem;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  #contact-form input, #contact-form textarea {
+    width: 50%;
+    padding: 16px;
+    margin: 10px 0px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+  }
+  
+  #contact-form button {
+    width: 15%;
+    margin: 10px 200px;
+    padding: 10px 20px;
+    background: white;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #contact-form button:hover {
+    background: transparent;
+    color: white;
+  }
+
+    </style>
+</head>
+<body>
+    <!--=============== REMIXICONS ===============-->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+<!--==================== CONTACT ====================-->
+<section class="contact section" id="contact">
+  <div class="contact__container grid">
+   
+
+    <div class="contact__mail">
+      <h2 class="contact__title">
+        Send Me A Message
+      </h2>
+
+      <form action="" class="contact__form" id="contact-form">
+        <div class="contact__group">
+          <div class="contact__box">
+            <input type="text" name="user_name" class="contact__input" id="name" required placeholder="First name">
+            <label for="name" class="contact__label">First Name</label>
+          </div>
+
+          <div class="contact__box">
+            <input type="email" name="user_email" class="contact__input" id="email" required placeholder="Email Address">
+            <label for="email" class="contact__label">Email Address</label>
+          </div>
+        </div>
+
+        <div class="contact__box">
+          <input type="email" name="user_subject" class="contact__input" id="subject" required placeholder="Subject">
+          <label for="subject" class="contact__label">Subject</label>
+        </div>
+
+        <div class="contact__box contact__area">
+          <textarea name="user_message" id="message" class="contact__input" required placeholder="Message"></textarea>
+          <label for="message" class="contact__label">Message</label>
+        </div>
+
+        <p class="contact__message" id="contact-message"></p>
+
+        <button type="submit" class="contact__button button">
+          <i class="ri-send-plane-line"></i> Send Message
+        </button>
+      </form>
+    </div>
+
+    
+  </div>
+</section>
+<script>
+    /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+        contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    /** ETAPE POUR CONNECTER EMAILJS AU FORMULAIRE DE CONTACT
+    * 1. https://www.emailjs.com - Sign In our Sign Up
+    * 2. "Email Services" => "Add New Service" => "Gmail" for example 
+    * 3. "Connect Account" => "Create Service" => Copy the "Service ID"
+    * 4. "Email Templates" => "Create New Template" 
+    * Subject *
+        New message from {{user_name}}
+        Content *
+            Names: {{user_name}}
+
+            Email: {{user_email}}
+
+            Subject: {{user_subject}}
+
+            Message: {{user_message}}
+
+            Best wishes,
+            EmailJS team
+    * => "Settings" => copy "Template ID
+    * 5. "Integration" => "Copy the Form ID" in html page
+    * 6. "API KEYS" => "Account" => "Create Key" => "Copy the Public Key"
+    * 7. serviceID - templateID - #form - publicKey
+    */
+    emailjs.sendForm('', '', '#contact-form', '')
+        .then(() => {
+            // Affiche le message de réussite d'envoi du message
+            contactMessage.textContent = 'Message sent successfully ✅'
+
+            // Supprime le message après cinq secondes
+            setTimeout(() => {
+                contactMessage.textContent = ''
+            }, 5000)
+
+            // Efface les champs de saisie après l'envoi du message
+            contactForm.reset()
+        }, () => {
+            // Affiche un message d'erreur d'envoi du message en cas de problème avec le service
+            contactMessage.textContent = 'Message not sent (service error) ❌'
+        })
+}
+contactForm.addEventListener('submit', sendEmail)
+
+</script>
+</body>
+</html>

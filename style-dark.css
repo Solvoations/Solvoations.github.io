@@ -39,53 +39,40 @@ body {
 
 
 
-:root{
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(240, 1%, 25%) 3%,
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-      to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%
-    ),
-    hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-      135deg,
-      hsla(45, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%
-    ),
-    hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(0, 0%, 25%) 0%,
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(0,0%,75%)
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
-  );
 
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /**
-   * transition
-   */
+.nav-links li a {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
 
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px; /* make the line thicker */
+  width: 100%;
+  background: linear-gradient(90deg,  #6a11cb, #000, #fff, #7a00ff, #4b0082, #8b00ff); /* rainbow gradient */
+  background-size: 200% auto;
+  transition: all .5s;
+  transform: translateX(-100%);
+}
+
+.nav-links li a:hover::after {
+  transform: translateX(0%);
+  animation: gradient-89 3s linear infinite;
+}
+
+@keyframes gradient-89 {
+  0% { background-position: 100% 0%; }
+  50% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
 }
 
 
@@ -139,8 +126,9 @@ nav {
       to right,
       #151515 20%,
       #d5dcee 30%,
-      #131414 70%,
-      #ebe4f9 80%
+      #1f06c3 40%,
+      #6a11cb 70%,
+      #ebe4f9 90%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -236,29 +224,6 @@ nav {
   margin: 0 15px;
 }
 
-.nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #6a11cb;
-}
-
-/* .btn {
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none;
-  border: white 1px solid;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  border: white 2px solid;
-  border-radius: 5px;
-  transform: translateY(-15px);
-} */
 
 /* Hamburger Menu */
 .hamburger {
@@ -293,15 +258,28 @@ nav {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
     text-align: center;
+    padding: 20px 0;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .glow-on-hover {
-    display: none;
+  .nav-links li {
+    margin: 15px 0; /* Vertical spacing for mobile menu items */
   }
+
+  .nav-links li  {
+    width: 250px; /* Match contact section button width for mobile */
+    height: 60px; /* Match contact section button height for mobile */
+    font-size: 1.1rem; /* Match contact section button font size for mobile */
+    margin: 10px auto; /* Center the button horizontally in the mobile menu */
+  }
+
+  /* .glow-on-hover {
+    width: 200px; 
+    font-size: 1rem;
+  } */
 }
 
 @media (max-width: 480px) {
@@ -312,7 +290,14 @@ nav {
   .logo img {
     height: 30px;
   }
+
+  .nav-links li  {
+    width: 200px; /* Slightly smaller button for very small screens */
+    height: 50px;
+    font-size: 1rem;
+  }
 }
+
    
   /* Hero Section */
   .hero {
@@ -636,9 +621,11 @@ nav {
     flex-direction: column;
     margin: 50px 0;
   } */
+
+
 /* Contact Section */
 .contact {
-  padding: 100px 20px; /* Reduced padding for smaller screens */
+  padding: 60px 15px; /* Base padding for smaller screens */
   text-align: left;
   background: transparent;
   background-image: url('Images/bg-img.jpg'); /* Add your image path here */
@@ -647,48 +634,127 @@ nav {
   background-repeat: no-repeat; /* Prevents the image from repeating */
   position: relative;
   overflow: hidden;
+  min-height: 100vh; /* Ensures the section takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
 }
 
 .contact h2 {
-  font-size: 2rem; /* Reduced font size for smaller screens */
-  text-align: left; /* Center align on smaller screens */
+  font-size: 1.8rem; /* Base font size for smaller screens */
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 #contact-form {
   display: flex;
   flex-direction: column;
-  align-items: left; /* Center align form on smaller screens */
+  align-items: flex-start; /* Align form items to the left */
+  width: 100%; /* Full width for flexibility */
+  max-width: 600px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the form horizontally */
 }
 
 #contact-form input,
 #contact-form textarea {
-  width: 100%; /* Full width on smaller screens */
-  max-width: 550px; /* Limit width on larger screens */
-  padding: 12px;
-  margin: 10px 0;
+  width: 100%; /* Full width by default */
+  padding: 12px; /* Increased padding for better touch targets */
+  margin: 10px 0; /* Slightly increased margin for spacing */
   border: 1px solid #555;
   border-radius: 5px;
   background: #333;
   color: #fff;
+  font-size: 1rem; /* Consistent font size */
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
 }
 
-#contact-form button {
-  width: 100%; /* Full width on smaller screens */
-  max-width: 200px; /* Limit width on larger screens */
-  margin: 10px 0; /* Adjusted margin for smaller screens */
-  padding: 10px 20px;
-  background: #6a11cb;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
+#contact-form textarea {
+  min-height: 150px; /* Increased minimum height for better usability */
+  resize: vertical; /* Allow vertical resizing only */
 }
 
-#contact-form button:hover {
-  background: transparent;
-  color: white;
-  border: 2px solid #fafbfc;
+
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (up to 600px, e.g., mobile) */
+@media (max-width: 600px) {
+  .contact {
+    padding: 40px 10px; /* Further reduced padding */
+  }
+
+  .contact h2 {
+    font-size: 1.5rem; /* Smaller heading */
+    text-align: center; /* Center heading on mobile */
+  }
+
+  #contact-form {
+    align-items: center; /* Center form items on mobile */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 100%; /* Full width on small screens */
+    padding: 14px; /* Increased padding for larger touch targets */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+  }
+
+  .glow-on-hover {
+  
+    width: 250px; /* Larger button width for mobile */
+    height: 60px; /* Increased height for better touch target */
+    padding: 0; /* No additional padding needed with fixed width/height */
+    font-size: 1.1rem; /* Larger font size for better readability */
+  }
+}
+
+/* Medium screens (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact {
+    padding: 80px 20px; /* Moderate padding */
+  }
+
+  .contact h2 {
+    font-size: 2rem; /* Slightly larger heading */
+    text-align: center;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 500px; /* Slightly smaller max-width */
+    padding: 12px; /* Consistent padding */
+  }
+
+  .glow-on-hover {
+    margin-left: 25%;
+    width: 200px; /* Default button width for tablets */
+    font-size: 1rem; /* Default font size */
+  }
+}
+
+/* Large screens (desktops, 901px and up) */
+@media (min-width: 901px) {
+  .contact {
+    padding: 100px 20px; /* Original padding for desktops */
+  }
+
+  .contact h2 {
+    font-size: 2.4rem; /* Larger heading */
+    text-align: center;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    max-width: 550px; /* Original max-width */
+    padding: 12px; /* Consistent padding */
+  }
+
+  .glow-on-hover {
+    margin-left: 30%;
+    width: 200px; /* Default button width for desktops */
+    padding: 12px 24px; /* Larger button padding */
+    font-size: 1.1rem; /* Larger font size */
+  }
 }
 
 /* FAQ Section */
@@ -746,23 +812,7 @@ nav {
 
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
-  .contact {
-    padding: 80px 15px; /* Further reduced padding for smaller screens */
-  }
-
-  .contact h2 {
-    font-size: 1.8rem; /* Smaller font size for mobile */
-  }
-
-  #contact-form input,
-  #contact-form textarea {
-    padding: 10px; /* Smaller padding for mobile */
-  }
-
-  #contact-form button {
-    padding: 8px 16px; /* Smaller padding for mobile */
-    font-size: 0.8rem; /* Smaller font size for mobile */
-  }
+  
 
   .wrapper {
     margin: 6% 5%; /* Further reduced margin for smaller screens */
@@ -790,23 +840,7 @@ nav {
 }
 
 @media screen and (max-width: 480px) {
-  .contact {
-    padding: 60px 10px; /* Minimal padding for very small screens */
-  }
-
-  .contact h2 {
-    font-size: 1.0rem; /* Even smaller font size for very small screens */
-  }
-
-  #contact-form input,
-  #contact-form textarea {
-    padding: 8px; /* Minimal padding for very small screens */
-  }
-
-  #contact-form button {
-    padding: 6px 12px; /* Minimal padding for very small screens */
-    font-size: 0.8rem; /* Even smaller font size for very small screens */
-  }
+ 
 
   .wrapper {
     margin: 6% 2%; /* Minimal margin for very small screens */
@@ -1178,7 +1212,7 @@ nav {
 
 
 /* About Us Section */
-.about {
+.about , .product{
   padding: 80px 20px;
   background: #1a1a1a;
   color: #fff;
@@ -1191,23 +1225,203 @@ nav {
     overflow: hidden;
 }
 
-.about-container {
+.about-container , .product-containe{
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about h2 {
+.about h2 , .product h2{
   font-size: 2.5rem;
   margin-bottom: 20px;
   /* animation: fadeIn 1.5s ease-in-out; */
 }
 
-.about-description {
+
+.about-description ,.product-descriptio {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto 40px;
   color: #ccc;
   /* animation: fadeIn 2s ease-in-out; */
+}
+
+/* 
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.product-images, .product-descriptions {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.product-images img {
+    display: none;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition:  opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: translateY(50px);
+}
+
+.product-images img.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-descriptions {
+    overflow-y: hidden;
+    height: 80vh;
+    scroll-snap-type: y mandatory;
+}
+
+.description {
+    scroll-snap-align: start;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+.description.active {
+    display: flex;
+} */
+
+/* product section */
+
+.product-section {
+  display: flex;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  /* padding: 10px; */
+  min-height: 100vh;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  position: absolute; /* Keeps it at the top */
+  top: 20px; /* Adjust top spacing */
+  color: white; /* Ensure visibility */
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  background: #0e0d0d;
+  width: 100%;
+  /* max-width: 1000px; */
+  height: 100%;
+  position: relative;
+  flex-direction: row;
+}
+
+
+.product-image {
+  width: 100%;
+  
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product-image img {
+  /* display: none; */
+  margin-left: 20px;
+  width: 100%;
+  max-width: 550px; 
+  height: auto; 
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(20px);
+}
+
+.product-image img.active {
+  /* display: block; */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-descriptions {
+  flex: 1;
+  overflow-y: auto;
+  background: #090909;
+  height: 75vh;
+  /* overflow-y: scroll; */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+            /* padding: 20px; */
+            box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+.product-description {
+  margin: 20px;
+ 
+  /* text-align: justify; */
+  height: 80vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  /*text-align: center; */
+
+}
+
+.description.active {
+  display: flex;
+}
+
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.carousel-controls button {
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.carousel-controls button:hover {
+  background-color: #4a0791;
+}
+
+@media (min-width: 768px) {
+  .product-section {
+      flex-direction: row;
+  }
+
+  .product-images, .product-descriptions {
+      flex: 1;
+      margin: 10px;
+  }
+
+  .carousel-controls {
+      display: none;
+  }
 }
 
 /* Team Members Grid */
@@ -1279,55 +1493,7 @@ nav {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   } */
   
-  /* Contact Section */
-  .contact {
-    padding: 150px 110px;
-    text-align: left;
-    background: transparent;
-    background-image: url('Images/bg-img.jpg'); /* Add your image path here */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    position: relative;
-    overflow: hidden;
-  }
-  .contact h2{
-    font-size: 2.3rem;
-  }
-  
-  #contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-  }
-  
-  #contact-form input, #contact-form textarea {
-    width: 50%;
-    padding: 16px;
-    margin: 10px 0px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background: #333;
-    color: #fff;
-  }
-  
-  #contact-form button {
-    width: 15%;
-    margin: 10px 200px;
-    padding: 10px 20px;
-    background: #6a11cb;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  #contact-form button:hover {
-    background: transparent;
-    color: white;
-    border: 2px solid #fafbfc;
-  }
+ 
 
   /* Quick Access Links Section */
 .quick-access {
@@ -1436,18 +1602,4 @@ nav {
   transform: translateY(0);
 }
 
-  #box1,#box2,#box3{
-    animation: floatUpDown 2s infinite;
-  }
-  @keyframes floatUpDown {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    75%{
-      transform: translateY(10px);
-    }
-    
-  }
+ 

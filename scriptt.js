@@ -33,6 +33,125 @@ window.onscroll = function () {
   prevScrollPos = currentScrollPos;
 };
 
+//products
+// let currentIndex = 0;
+// const images = document.querySelectorAll('.product-images img');
+// const descriptions = document.querySelectorAll('.description');
+
+// function updateDisplay() {
+//     images.forEach((img, index) => {
+//         img.classList.remove('active');
+//         if (index === currentIndex) {
+//             setTimeout(() => {
+//                 img.classList.add('active');
+//             }, 50); // Delay for image transition
+//         }
+//     });
+
+//     descriptions.forEach((desc, index) => {
+//         desc.classList.remove('active');
+//         if (index === currentIndex) {
+//             desc.classList.add('active');
+//         }
+//     });
+// }
+
+// document.querySelector('.next-btn').addEventListener('click', () => {
+//     currentIndex = (currentIndex + 1) % images.length;
+//     updateDisplay();
+// });
+
+// document.querySelector('.prev-btn').addEventListener('click', () => {
+//     currentIndex = (currentIndex - 1 + images.length) % images.length;
+//     updateDisplay();
+// });
+
+// // Initial display update
+// updateDisplay();
+
+// // Scroll event listener for the entire page
+// document.addEventListener('scroll', function() {
+//     const productSection = document.querySelector('.product-section');
+//     const rect = productSection.getBoundingClientRect();
+
+//     if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+//         const descriptions = document.querySelectorAll('.description');
+//         let newIndex = 0;
+
+//         descriptions.forEach((desc, index) => {
+//             const descRect = desc.getBoundingClientRect();
+//             if (descRect.top <= window.innerHeight / 2 && descRect.bottom >= window.innerHeight / 2) {
+//                 newIndex = index;
+//             }
+//         });
+
+//         if (newIndex !== currentIndex) {
+//             currentIndex = newIndex;
+//             updateDisplay();
+//         }
+//     }
+// });
+
+
+//new code
+const productDescriptions = document.getElementById('product-descriptions');
+const productImages = document.querySelectorAll('.product-image img');
+let currentIndex = 0;
+
+// Function to update the active image
+const updateActiveImage = (index) => {
+    productImages.forEach((img, i) => {
+        if (i === index) {
+            img.classList.add('active');
+        } else {
+            img.classList.remove('active');
+        }
+    });
+};
+
+// Scroll event listener
+productDescriptions.addEventListener('scroll', () => {
+    const scrollPosition = productDescriptions.scrollTop;
+    const descriptionHeight = productDescriptions.clientHeight;
+    const totalHeight = productDescriptions.scrollHeight;
+    const scrollPercentage = scrollPosition / (totalHeight - descriptionHeight);
+
+    // Calculate the current index based on scroll position
+    const newIndex = Math.floor(scrollPercentage * productImages.length);
+    if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        updateActiveImage(currentIndex);
+    }
+
+
+// Ensure the section becomes scrollable after all products are scrolled
+
+    // if (productDescriptions.scrollTop + productDescriptions.clientHeight >= productDescriptions.scrollHeight) {
+    //     document.body.style.overflow = 'auto';
+    // } else {
+    //     document.body.style.overflow = 'hidden';
+    // }
+  });
+
+
+  //contact form submit using emailJS
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.init("o6FCj7eybSWlzKniL"); // Replace with your Email.js Public Key
+
+    emailjs.send("service_gy57yxh", "template_1hohhlv", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    }).then(function(response) {
+        alert("Message sent successfully!");
+    }, function(error) {
+        alert("Failed to send message. Try again later.");
+    });
+});
+
+
 //faqs
 let question = document.querySelectorAll(".question");
 
@@ -75,10 +194,10 @@ scrollToTopButton.addEventListener("click", () => {
 const projects = [
   {
     id: '1',
-    title: 'BlissCamp',
+    title: 'Star Computers',
     category: 'Web Development',
-    image: "https://picsum.photos/seed/project1/600/400",
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
+    image: "Images/project-6.png",
+    video: 'video/star computers.mp4',
     description: 'A website for Tourists and Travellers',
     links: {
      // live: 'https://nk2552003.github.io/BlissCampIndia/',
@@ -89,10 +208,10 @@ const projects = [
   },
   {
     id: '2',
-    title: "lil' me",
-    category: 'Web Development',
-    image: 'https://picsum.photos/seed/project2/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
+    title: "Himflix OTT Platform",
+    category: 'App Development',
+    image: 'Images/project-1.png',
+    video: 'Images/project-1.png',
     description: 'An animated moving boy using pure CSS, HTML & JS',
     links: {
      // live: 'https://codepen.io/rlaqxvbr-the-bashful/pen/MYgpywe',
@@ -103,10 +222,10 @@ const projects = [
   },
   {
     id: '3',
-    title: 'Cursor',
+    title: 'Mini Spotify',
     category: 'Web Development',
-    image: 'https://picsum.photos/seed/project3/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
+    image: 'Images/project-9.png',
+    video: 'video/Mini Spotify.mp4',
     description: 'The custom modified cursor for better interactivity with users',
     links: {
     //  live: 'https://codepen.io/rlaqxvbr-the-bashful/details/ExqvZey',
@@ -117,10 +236,10 @@ const projects = [
   },
   {
     id: '4',
-    title: 'Background',
-    category: 'Web Development',
-    image: 'https://picsum.photos/seed/project4/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
+    title: 'Musica',
+    category: 'App Development',
+    image: 'Images/project-2.png',
+    video: 'video/musica.mp4',
     description: 'A randomized background generator for any content creator',
     links: {
      // live: 'https://codepen.io/rlaqxvbr-the-bashful/pen/VwoLgrj',
@@ -131,10 +250,10 @@ const projects = [
   },
   {
     id: '5',
-    title: 'CSS Filters',
-    category: 'Web Development',
-    image: 'https://picsum.photos/seed/project5/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
+    title: 'Weather Forcast App',
+    category: 'App Development',
+    image: 'Images/project-5.png',
+    video: 'video/weather.mp4',
     description: 'A CSS filter section displaying images on hover with animation',
     links: {
      // live: 'https://codepen.io/rlaqxvbr-the-bashful/pen/KKLVxza',
@@ -157,62 +276,8 @@ const projects = [
     },
     progress: 'Working on it'
   },
-  {
-    id: '7',
-    title: 'Portfolio',
-    category: 'Web Development',
-    image: 'https://picsum.photos/seed/project7/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
-    description: 'Created the portfolio for my colleague for resume purposes.',
-    links: {
-      //live: 'https://rohit-s-portfolio.netlify.app/',
-      github: 'https://github.com/NK2552003/Rohit-s_Portfolio',
-      //codepen: 'https://github.com/NK2552003/Rohit-s_Portfolio'
-    },
-    progress: 'Completed'
-  },
-  {
-    id: '8',
-    title: 'LandingPage',
-    category: 'Web Development',
-    image: 'https://picsum.photos/seed/project8/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
-    description: 'The webpage features images and text content with stunning visuals.',
-    links: {
-     // live: 'https://codepen.io/rlaqxvbr-the-bashful/pen/MWdKBpa',
-      github: 'https://github.com/NK2552003/Dynamic_Landing_WebPage',
-     // codepen: 'https://codepen.io/rlaqxvbr-the-bashful/pen/MWdKBpa'
-    },
-    progress: 'Completed'
-  },
-  {
-    id: '9',
-    title: 'Satranj',
-    category: 'App Development',
-    image: 'https://picsum.photos/seed/project9/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
-    description: 'A Simple and Easy-to-Play Ancient Chess Game in Flutter',
-    links: {
-    //  live: 'https://github.com/NK2552003/Satranj-Chess-_Game',
-      github: 'https://github.com/NK2552003/Satranj-Chess-_Game',
-    //  codepen: 'https://github.com/NK2552003/Satranj-Chess-_Game'
-    },
-    progress: 'Completed'
-  },
-  {
-    id: '10',
-    title: 'Civic Link',
-    category: 'Embedded',
-    image: 'https://picsum.photos/seed/project10/600/400',
-    video: 'https://www.nitish.fun/Assets/Project_Assets/Videos/v_1.mp4',
-    description: 'A collaborative platform dedicated to society or community to report or for services in the society means a community handler.',
-    links: {
-     // live: 'https://nk2552003.github.io/Civic_Link/',
-      github: 'https://github.com/NK2552003/Civic_Link',
-     // codepen: 'https://nk2552003.github.io/Civic_Link/'
-    },
-    progress: 'Completed'
-  }
+
+ 
 ];
 
 
@@ -369,162 +434,3 @@ const pauseVideo = (video) => {
 updateUI();
 
 
-// Scroll Animation
-// gsap.from("#box1",{
-//   x:800,
-//   duration:5,
-//   delay:1
-// })
-// gsap.from("#box2",{
-//   x:-800,
-//   duration:2,
-//   delay:6
-// })
-// gsap.from("#box3",{
-//   y:20,
-//   duration:2,
-//   delay:2
-// })
-
-// gsap.from(".feature-grid",{
-//   stagger:1
-// })
-
-//previous 1
-// // Theme Toggle
-
-// const themeToggle = document.getElementById('theme-toggle');
-// const body = document.body;
-
-// // Check if the user has a preferred theme (optional)
-// const savedTheme = localStorage.getItem('theme');
-// if (savedTheme) {
-//   body.classList.add(savedTheme);
-//   themeToggle.textContent = savedTheme === 'dark-theme' ? '🌞' : '🌓';
-// } else {
-//   themeToggle.textContent = '🌓'; // Default to light theme
-// }
-
-// themeToggle.addEventListener('click', () => {
-//   body.classList.toggle('dark-theme');
-//   const isDarkTheme = body.classList.contains('dark-theme');
-
-//   // Update the button text
-//   themeToggle.textContent = isDarkTheme ? '🌞' : '🌓';
-
-//   // Save the theme preference to localStorage (optional)
-//   localStorage.setItem('theme', isDarkTheme ? 'dark-theme' : 'light-theme');
-// });
-
-// // Smooth Scrolling
-// document.querySelectorAll('nav ul li a').forEach(anchor => {
-//   anchor.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     document.querySelector(this.getAttribute('href')).scrollIntoView({
-//       behavior: 'smooth'
-//     });
-//   });
-// });
-
-// // Mobile Menu Toggle
-// const menuIcon = document.getElementById('menu-icon');
-// const navLinks = document.getElementById('nav-links');
-
-// menuIcon.addEventListener('click', () => {
-//   navLinks.classList.toggle('active');
-// });
-
-// // Close menu when a link is clicked (for mobile)
-// navLinks.addEventListener('click', () => {
-//   if (navLinks.classList.contains('active')) {
-//     navLinks.classList.remove('active');
-//   }
-// });
-
-// // Scroll Animation
-// const sections = document.querySelectorAll('.section');
-
-// const checkVisibility = () => {
-//   sections.forEach(section => {
-//     const sectionTop = section.getBoundingClientRect().top;
-//     const sectionBottom = section.getBoundingClientRect().bottom;
-//     const isVisible = sectionTop < window.innerHeight && sectionBottom >= 0;
-
-//     if (isVisible) {
-//       section.classList.add('visible');
-//     }
-//   });
-// };
-
-// // Initial check on page load
-// checkVisibility();
-
-// // Check on scroll
-// window.addEventListener('scroll', checkVisibility);
-
-// // EmailJS Integration
-// emailjs.init('YOUR_EMAILJS_USER_ID'); // Replace with your EmailJS User ID
-
-// document.getElementById('contact-form').addEventListener('submit', function (e) {
-//   e.preventDefault();
-
-//   const name = document.getElementById('name').value;
-//   const email = document.getElementById('email').value;
-//   const message = document.getElementById('message').value;
-
-//   emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', {
-//     from_name: name,
-//     from_email: email,
-//     message: message
-//   }).then(() => {
-//     document.getElementById('form-status').textContent = 'Message sent successfully!';
-//     document.getElementById('contact-form').reset();
-//   }, (error) => {
-//     document.getElementById('form-status').textContent = 'Failed to send message. Please try again.';
-//     console.error('EmailJS Error:', error);
-//   });
-// });
-
-
-//previous 2
-
-// // Theme Toggle
-// const themeToggle = document.getElementById('theme-toggle');
-// const body = document.body;
-
-// themeToggle.addEventListener('click', () => {
-//   body.classList.toggle('dark-theme');
-//   const isDarkTheme = body.classList.contains('dark-theme');
-//   themeToggle.textContent = isDarkTheme ? '🌞' : '🌓';
-// });
-
-// // Smooth Scrolling
-// document.querySelectorAll('nav ul li a').forEach(anchor => {
-//   anchor.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     document.querySelector(this.getAttribute('href')).scrollIntoView({
-//       behavior: 'smooth'
-//     });
-//   });
-// });
-
-// // Scroll Animation
-// const sections = document.querySelectorAll('.section');
-
-// const checkVisibility = () => {
-//   sections.forEach(section => {
-//     const sectionTop = section.getBoundingClientRect().top;
-//     const sectionBottom = section.getBoundingClientRect().bottom;
-//     const isVisible = sectionTop < window.innerHeight && sectionBottom >= 0;
-
-//     if (isVisible) {
-//       section.classList.add('visible');
-//     }
-//   });
-// };
-
-// // Initial check on page load
-// checkVisibility();
-
-// // Check on scroll
-// window.addEventListener('scroll', checkVisibility);
