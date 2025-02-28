@@ -214,7 +214,7 @@ const projects = [
     video: 'video/weather.mp4',
     description: 'A flutter based mobile application for real time weather forcast.',
     links: {
-      live: 'https://codepen.io/rlaqxvbr-the-bashful/pen/KKLVxza',
+      live: 'video/weather.mp4',
      // github: 'https://codepen.io/rlaqxvbr-the-bashful/pen/KKLVxza',
      // codepen: 'https://codepen.io/rlaqxvbr-the-bashful/pen/KKLVxza'
     },
