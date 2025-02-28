@@ -603,11 +603,377 @@ a {
     color: white;
   }
 
+
+  /* Product Section */
+.product-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 10px;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  color: white;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column; /* Stack on mobile by default */
+  align-items: center;
+  background: #0e0d0d;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal overflow by default */
+}
+
+.product-images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling on mobile */
+  scroll-snap-type: x mandatory; /* Snap to images */
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center; /* Snap to center of images */
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(20px);
+}
+
+.product-image img.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-descriptions {
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  overflow-y: auto; /* Make description scrollable vertically */
+  background: #090909;
+  height: auto; /* Dynamic height based on content */
+  scroll-behavior: smooth;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-description {
+  margin: 20px 0;
+  text-align: justify;
+  display: none; /* Hide all descriptions by default, show via JS */
+  scroll-snap-align: start;
+}
+
+.product-description.active {
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  gap: 20px; /* Space between buttons */
+}
+
+.carousel-controls button {
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.carousel-controls button:hover {
+  background-color: #4a0791;
+}
+
+/* Responsive Styles */
+
+/* Small screens (up to 768px, e.g., mobile) */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; /* Stack image and description vertically */
+    padding: 10px;
+  }
+
+  .product-images {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .product-image {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .product-descriptions {
+    height: 50vh; /* Limit height for scrolling */
+    max-width: 100%;
+  }
+
+  .carousel-controls {
+    display: flex; /* Show controls on mobile */
+  }
+}
+
+/* Medium screens (768px - 1024px, e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-container {
+    flex-direction: column; /* Stack on tablets */
+    padding: 20px;
+  }
+
+  .product-images {
+    margin-bottom: 20px;
+  }
+
+  .product-image {
+    max-width: 80%; /* Slightly smaller on tablets */
+  }
+
+  .product-descriptions {
+    height: 50vh;
+    max-width: 90%;
+  }
+
+  .carousel-controls {
+    display: flex; /* Show controls on tablets */
+  }
+}
+
+/* Large screens (1025px and up, e.g., desktops) */
+@media (min-width: 1025px) {
+  .product-section {
+    flex-direction: row; /* Side-by-side on desktop */
+    padding: 40px;
+  }
+
+  .product-container {
+    flex-direction: row; /* Side-by-side on desktop */
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh; /* Fixed height for desktop */
+  }
+
+  .product-images {
+    flex: 1;
+    overflow: hidden; /* No scrolling on desktop */
+    margin-right: 20px;
+  }
+
+  .product-image {
+    max-width: 100%;
+  }
+
+  .product-descriptions {
+    flex: 1;
+    height: 80vh; /* Match container height */
+    max-width: 100%;
+  }
+
+  .carousel-controls {
+    display: none; /* Hide controls on desktop */
+  }
+}
+
+/* //product section */
+
+
+.product-section {
+  display: flex;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  /* padding: 10px; */
+  min-height: 100vh;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  position: absolute; /* Keeps it at the top */
+  top: 20px; /* Adjust top spacing */
+  color: white; /* Ensure visibility */
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  background: #0e0d0d;
+  width: 100%;
+  /* max-width: 1000px; */
+  height: 100%;
+  position: relative;
+  flex-direction: row;
+}
+
+
+.product-image {
+  width: 100%;
+  
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product-image img {
+  /* display: none; */
+  margin-left: 20px;
+  width: 100%;
+  max-width: 550px; 
+  height: auto; 
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(20px);
+}
+
+.product-image img.active {
+  /* display: block; */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-descriptions {
+  flex: 1;
+  overflow-y: auto;
+  background: #090909;
+  height: 75vh;
+  /* overflow-y: scroll; */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+            /* padding: 20px; */
+            box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+.product-description {
+  margin: 20px;
+ 
+  /* text-align: justify; */
+  height: 80vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  /*text-align: center; */
+
+}
+
+.description.active {
+  display: flex;
+}
+
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.carousel-controls button {
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.carousel-controls button:hover {
+  background-color: #4a0791;
+}
+
+@media (min-width: 768px) {
+  .product-section {
+      flex-direction: row;
+  }
+
+  .product-images, .product-descriptions {
+      flex: 1;
+      margin: 10px;
+  }
+
+  .carousel-controls {
+      display: none;
+  }
+}
     </style>
 </head>
 <body>
     <!--=============== REMIXICONS ===============-->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+<section class="product-section">
+    <h2 class="section-title">Our Products</h2>
+    <div class="product-container">
+      <div class="product-images">
+        <div class="product-image">
+          <img src="path-to-ropay1-image.jpg" alt="RoPay 1" class="active">
+        </div>
+        <div class="product-image">
+          <img src="path-to-ropay2-image.jpg" alt="RoPay 2">
+        </div>
+        <div class="product-image">
+          <img src="path-to-ropay3-image.jpg" alt="RoPay 3">
+        </div>
+      </div>
+      <div class="product-descriptions" id="product-descriptions">
+        <div class="product-description">
+          <h2>RoPay 1</h2>
+          <p>RoPay is a smart plug-and-play device designed for rental-based water RO systems, enabling time-based subscriptions with automatic flow cutoff after expiry. With *Wi-Fi & BLE connectivity, it offers real-time monitoring, remote control via web/app, automated diagnostics, and subscription-based access management. Service providers benefit from secure revenue, reduced operational costs, and enhanced customer retention, while users enjoy hassle-free water management. RoPay is available in multiple variants with features like flow metering, water data logging, TDS monitoring, and error alerts. **Optimize your water rental business with RoPay!* 📩 *Download the full document for details.*</p>
+        </div>
+        <div class="product-description">
+          <h2>RoPay 2</h2>
+          <p>RoPay is a smart plug-and-play device designed for rental-based water RO systems, enabling time-based subscriptions with automatic flow cutoff after expiry. With *Wi-Fi & BLE connectivity, it offers real-time monitoring, remote control via web/app, automated diagnostics, and subscription-based access management. Service providers benefit from secure revenue, reduced operational costs, and enhanced customer retention, while users enjoy hassle-free water management. RoPay is available in multiple variants with features like flow metering, water data logging, TDS monitoring, and error alerts. **Optimize your water rental business with RoPay!* 📩 *Download the full document for details.*</p>
+        </div>
+        <div class="product-description">
+          <h2>RoPay 3</h2>
+          <p>RoPay is a smart plug-and-play device designed for rental-based water RO systems, enabling time-based subscriptions with automatic flow cutoff after expiry. With *Wi-Fi & BLE connectivity, it offers real-time monitoring, remote control via web/app, automated diagnostics, and subscription-based access management. Service providers benefit from secure revenue, reduced operational costs, and enhanced customer retention, while users enjoy hassle-free water management. RoPay is available in multiple variants with features like flow metering, water data logging, TDS monitoring, and error alerts. **Optimize your water rental business with RoPay!* 📩 *Download the full document for details.*</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="prev-btn"><</button>
+      <button class="next-btn">></button>
+    </div>
+  </section>
 
 <!--==================== CONTACT ====================-->
 <section class="contact section" id="contact">
@@ -654,6 +1020,71 @@ a {
   </div>
 </section>
 <script>
+    const productDescriptions = document.getElementById('product-descriptions');
+const productImages = document.querySelectorAll('.product-image img');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let currentIndex = 0;
+
+// Function to update the active image and description
+const updateActiveContent = (index) => {
+  productImages.forEach((img, i) => {
+    img.classList.remove('active');
+    if (i === index) img.classList.add('active');
+  });
+
+  const descriptions = document.querySelectorAll('.product-description');
+  descriptions.forEach((desc, i) => {
+    desc.classList.remove('active');
+    if (i === index) desc.classList.add('active');
+  });
+};
+
+// Initial setup
+updateActiveContent(currentIndex);
+
+// Scroll event listener for description scrolling (keeps existing behavior but ensures scrollability anywhere in product section)
+document.querySelector('.product-section').addEventListener('scroll', () => {
+  const scrollPosition = productDescriptions.scrollTop;
+  const descriptionHeight = productDescriptions.clientHeight;
+  const totalHeight = productDescriptions.scrollHeight;
+  const scrollPercentage = scrollPosition / (totalHeight - descriptionHeight);
+
+  // Calculate the current index based on scroll position
+  const newIndex = Math.floor(scrollPercentage * productImages.length);
+  if (newIndex !== currentIndex && newIndex >= 0 && newIndex < productImages.length) {
+    currentIndex = newIndex;
+    updateActiveContent(currentIndex);
+  }
+});
+
+// Carousel navigation (for mobile/tablet)
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + productImages.length) % productImages.length;
+  updateActiveContent(currentIndex);
+  productDescriptions.scrollTop = (currentIndex * productDescriptions.scrollHeight) / productImages.length;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % productImages.length;
+  updateActiveContent(currentIndex);
+  productDescriptions.scrollTop = (currentIndex * productDescriptions.scrollHeight) / productImages.length;
+});
+
+// Ensure description is scrollable anywhere in product section
+document.querySelector('.product-section').addEventListener('wheel', (event) => {
+  if (productDescriptions.scrollHeight > productDescriptions.clientHeight) {
+    event.preventDefault();
+    productDescriptions.scrollTop += event.deltaY;
+  }
+});
+
+// Prevent default scroll behavior for the product section to avoid interfering with the website's scroll
+document.querySelector('.product-section').addEventListener('wheel', (event) => {
+  if (productDescriptions.scrollHeight > productDescriptions.clientHeight) {
+    event.preventDefault();
+  }
+});
     /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
         contactMessage = document.getElementById('contact-message')

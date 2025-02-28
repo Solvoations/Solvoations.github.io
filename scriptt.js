@@ -1,137 +1,127 @@
 
-// Smooth Scrolling
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-//navbar// Toggle Hamburger Menu
-function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-}
-
-// Hide Navbar on Scroll Down, Show on Scroll Up
-let prevScrollPos = window.pageYOffset;
-
-window.onscroll = function () {
-  const currentScrollPos = window.pageYOffset;
-  const navbar = document.querySelector('nav');
-
-  if (prevScrollPos > currentScrollPos) {
-    // Scrolling Up
-    navbar.style.top = '0';
-  } else {
-    // Scrolling Down
-    navbar.style.top = '-80px'; /* Adjust based on navbar height */
-  }
-
-  prevScrollPos = currentScrollPos;
-};
-
-//products
-// let currentIndex = 0;
-// const images = document.querySelectorAll('.product-images img');
-// const descriptions = document.querySelectorAll('.description');
-
-// function updateDisplay() {
-//     images.forEach((img, index) => {
-//         img.classList.remove('active');
-//         if (index === currentIndex) {
-//             setTimeout(() => {
-//                 img.classList.add('active');
-//             }, 50); // Delay for image transition
-//         }
+// // Smooth Scrolling
+// document.querySelectorAll('nav ul li a').forEach(anchor => {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     document.querySelector(this.getAttribute('href')).scrollIntoView({
+//       behavior: 'smooth'
 //     });
+//   });
+// });
 
-//     descriptions.forEach((desc, index) => {
-//         desc.classList.remove('active');
-//         if (index === currentIndex) {
-//             desc.classList.add('active');
-//         }
-//     });
+// //navbar// Toggle Hamburger Menu
+// function toggleMenu() {
+//   const navLinks = document.getElementById('navLinks');
+//   navLinks.classList.toggle('active');
 // }
 
-// document.querySelector('.next-btn').addEventListener('click', () => {
-//     currentIndex = (currentIndex + 1) % images.length;
-//     updateDisplay();
-// });
+// // Hide Navbar on Scroll Down, Show on Scroll Up
+// let prevScrollPos = window.pageYOffset;
 
-// document.querySelector('.prev-btn').addEventListener('click', () => {
-//     currentIndex = (currentIndex - 1 + images.length) % images.length;
-//     updateDisplay();
-// });
+// window.onscroll = function () {
+//   const currentScrollPos = window.pageYOffset;
+//   const navbar = document.querySelector('nav');
 
-// // Initial display update
-// updateDisplay();
+//   if (prevScrollPos > currentScrollPos) {
+//     // Scrolling Up
+//     navbar.style.top = '0';
+//   } else {
+//     // Scrolling Down
+//     navbar.style.top = '-80px'; /* Adjust based on navbar height */
+//   }
 
-// // Scroll event listener for the entire page
-// document.addEventListener('scroll', function() {
-//     const productSection = document.querySelector('.product-section');
-//     const rect = productSection.getBoundingClientRect();
+//   prevScrollPos = currentScrollPos;
+// };
 
-//     if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-//         const descriptions = document.querySelectorAll('.description');
-//         let newIndex = 0;
 
-//         descriptions.forEach((desc, index) => {
-//             const descRect = desc.getBoundingClientRect();
-//             if (descRect.top <= window.innerHeight / 2 && descRect.bottom >= window.innerHeight / 2) {
-//                 newIndex = index;
-//             }
-//         });
+//new navbar auto close code
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  const navLinkItems = document.querySelectorAll('nav ul li a');
 
-//         if (newIndex !== currentIndex) {
-//             currentIndex = newIndex;
-//             updateDisplay();
-//         }
-//     }
-// });
+  // Smooth Scrolling
+  navLinkItems.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetSection = document.querySelector(this.getAttribute('href'));
+          targetSection.scrollIntoView({
+              behavior: 'smooth'
+          });
+          // Close hamburger menu after click
+          navLinks.classList.remove('active');
+      });
+  });
 
+  // Toggle Hamburger Menu
+  if (hamburger) {
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
+
+  // Hide Navbar on Scroll Down, Show on Scroll Up
+  let prevScrollPos = window.pageYOffset;
+
+  window.onscroll = function () {
+      const currentScrollPos = window.pageYOffset;
+      const navbar = document.querySelector('nav');
+
+      if (prevScrollPos > currentScrollPos) {
+          // Scrolling Up
+          navbar.style.top = '0';
+      } else {
+          // Scrolling Down
+          navbar.style.top = '-80px'; // Adjust based on navbar height
+      }
+
+      prevScrollPos = currentScrollPos;
+  };
+});
+
+//services read
 
 //new code
-const productDescriptions = document.getElementById('product-descriptions');
-const productImages = document.querySelectorAll('.product-image img');
-let currentIndex = 0;
+// const productDescriptions = document.getElementById('product-descriptions');
+// const productImages = document.querySelectorAll('.product-image img');
+// let currentIndex = 0;
 
-// Function to update the active image
-const updateActiveImage = (index) => {
-    productImages.forEach((img, i) => {
-        if (i === index) {
-            img.classList.add('active');
-        } else {
-            img.classList.remove('active');
-        }
-    });
-};
+// // Function to update the active image
+// const updateActiveImage = (index) => {
+//     productImages.forEach((img, i) => {
+//         if (i === index) {
+//             img.classList.add('active');
+//         } else {
+//             img.classList.remove('active');
+//         }
+//     });
+// };
 
-// Scroll event listener
-productDescriptions.addEventListener('scroll', () => {
-    const scrollPosition = productDescriptions.scrollTop;
-    const descriptionHeight = productDescriptions.clientHeight;
-    const totalHeight = productDescriptions.scrollHeight;
-    const scrollPercentage = scrollPosition / (totalHeight - descriptionHeight);
+// // Scroll event listener
+// productDescriptions.addEventListener('scroll', () => {
+//     const scrollPosition = productDescriptions.scrollTop;
+//     const descriptionHeight = productDescriptions.clientHeight;
+//     const totalHeight = productDescriptions.scrollHeight;
+//     const scrollPercentage = scrollPosition / (totalHeight - descriptionHeight);
 
-    // Calculate the current index based on scroll position
-    const newIndex = Math.floor(scrollPercentage * productImages.length);
-    if (newIndex !== currentIndex) {
-        currentIndex = newIndex;
-        updateActiveImage(currentIndex);
-    }
+//     // Calculate the current index based on scroll position
+//     const newIndex = Math.floor(scrollPercentage * productImages.length);
+//     if (newIndex !== currentIndex) {
+//         currentIndex = newIndex;
+//         updateActiveImage(currentIndex);
+//     }
 
 
-// Ensure the section becomes scrollable after all products are scrolled
+// // Ensure the section becomes scrollable after all products are scrolled
 
-    // if (productDescriptions.scrollTop + productDescriptions.clientHeight >= productDescriptions.scrollHeight) {
-    //     document.body.style.overflow = 'auto';
-    // } else {
-    //     document.body.style.overflow = 'hidden';
-    // }
-  });
+//     // if (productDescriptions.scrollTop + productDescriptions.clientHeight >= productDescriptions.scrollHeight) {
+//     //     document.body.style.overflow = 'auto';
+//     // } else {
+//     //     document.body.style.overflow = 'hidden';
+//     // }
+//   });
+
+
 
 
   //contact form submit using emailJS
@@ -149,6 +139,8 @@ productDescriptions.addEventListener('scroll', () => {
     }, function(error) {
         alert("Failed to send message. Try again later.");
     });
+    // Reset the form to clear all fields
+  this.reset();
 });
 
 
