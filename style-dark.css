@@ -1188,14 +1188,16 @@ nav {
 .about h2 , .product h2{
   font-size: 2.5rem;
   margin-bottom: 20px;
+  margin-top: 0px;
   /* animation: fadeIn 1.5s ease-in-out; */
 }
 
 
 .about-description ,.product-descriptio {
   font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 40px;
+  max-width: 750px;
+  margin: 0 auto 100px;
+  text-align: center; /* Center the text */
   color: #ccc;
   /* animation: fadeIn 2s ease-in-out; */
 }
