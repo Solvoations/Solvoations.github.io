@@ -22,10 +22,10 @@ const timer = setInterval(() => {
   // If the countdown is over, display a message and redirect after 2 seconds
   if (timeLeft < 0) {
     clearInterval(timer);
-    // document.querySelector('.timer-container').innerHTML = `
-    //   <h1>Website Launched!</h1>
-    //   <p>Thank you for waiting. Explore our new website now!</p>
-    // `;
+    document.querySelector('.timer-container').innerHTML = `
+      <h1>Website Launched!</h1>
+      <p>Thank you for waiting. Explore our new website now!</p>
+    `;
 
     // Redirect to the main website after 2 seconds
     setTimeout(() => {
