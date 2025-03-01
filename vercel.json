@@ -2,11 +2,7 @@
   "routes": [
     {
       "src": "/",
-      "dest": "/timer.html" 
-    },
-    {
-      "src": "/index.html",
-      "dest": "/index.html" 
+      "dest": "/index.html"
     }
   ]
 }
