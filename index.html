@@ -150,7 +150,7 @@
   <div id="scroll-to-top" class="scroll-to-top"><i class="fas fa-arrow-up"></i></div>
 
   <footer><p>© 2025 Solvoations. All rights reserved.</p></footer>
-
+<!-- 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
@@ -164,6 +164,32 @@
         duration: 1,
         delay: i * 0.2,
         scrollTrigger: { trigger: el.parentElement, start: "top 80%" }
+      });
+    });
+  </script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="scriptt.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      console.log("GSAP loaded:", gsap.version);
+      gsap.utils.toArray(".hero-content > *, .container-service > *, .about > *, .projects > *, .faq > *, .contact > *").forEach((el, i) => {
+        console.log("Animating:", el);
+        gsap.from(el, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: el.parentElement,
+            start: "top 90%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+            //markers: true // Remove in production
+          }
+        });
       });
     });
   </script>
