@@ -83,7 +83,7 @@ nav {
 .logo span {
   color: #fff;
   font-weight: 500;
-  background: linear-gradient(to right, #151515 20%, #d5dcee 30%, #1f06c3 40%, #6a11cb 70%, #ebe4f9 90%);
+  background: linear-gradient(to right, #d5dcee 30%, #1f06c3 40%, #6a11cb 70%, #ebe4f9 90%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -197,6 +197,8 @@ nav {
   .nav-links li a { width: 200px; height: 50px; font-size: 1rem; }
   .navbar-container { padding: 2px .5rem; }
 }
+
+
 
 .hero {
   width: 100%;
@@ -376,7 +378,7 @@ nav {
 .card__bx:hover a:hover { border-color: var(--dark-color); color: var(--dark-color); background: var(--clr); }
 
 .projects {
-  padding: 100px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -395,7 +397,7 @@ nav {
 }
 
 .contact h2 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -449,7 +451,7 @@ nav {
 }
 
 .wrapper {
-  margin: 6% 10%;
+  margin: 3% 10%;
   width: 80%;
 }
 

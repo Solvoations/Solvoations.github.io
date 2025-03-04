@@ -17,31 +17,59 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburger?.addEventListener("click", () => navLinks.classList.toggle("active"));
 
   // Hide/show navbar on scroll
-  let prevScroll = window.pageYOffset;
-  window.onscroll = debounce(() => {
-    const currScroll = window.pageYOffset;
-    navbar.style.top = prevScroll > currScroll ? "0" : "-80px";
-    prevScroll = currScroll;
-  }, 50);
-  function debounce(func, wait) {
-    let timeout;
-    return () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(func, wait);
-    };
-  }
+  // let prevScroll = window.pageYOffset;
+  // window.onscroll = debounce(() => {
+  //   const currScroll = window.pageYOffset;
+  //   navbar.style.top = prevScroll > currScroll ? "0" : "-80px";
+  //   prevScroll = currScroll;
+  // }, 50);
+  // function debounce(func, wait) {
+  //   let timeout;
+  //   return () => {
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(func, wait);
+  //   };
+  // }
 
-  // Contact form submission with EmailJS
   document.getElementById("contact-form").addEventListener("submit", e => {
     e.preventDefault();
+    
     emailjs.init("o6FCj7eybSWlzKniL");
     emailjs.send("service_gy57yxh", "template_1hohhlv", {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value
-    }).then(() => alert("Message sent successfully!"), () => alert("Failed to send message. Try again later."));
+    }).then(
+      () => Toastify({
+        text: "Message sent successfully!",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#000",
+      }).showToast(),
+      () => Toastify({
+        text: "Failed to send message. Try again later.",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#f44336",
+      }).showToast()
+    );
     e.target.reset();
   });
+  
+
+  // Contact form submission with EmailJS
+  // document.getElementById("contact-form").addEventListener("submit", e => {
+  //   e.preventDefault();
+  //   emailjs.init("o6FCj7eybSWlzKniL");
+  //   emailjs.send("service_gy57yxh", "template_1hohhlv", {
+  //     name: document.getElementById("name").value,
+  //     email: document.getElementById("email").value,
+  //     message: document.getElementById("message").value
+  //   }).then(() => alert("Message sent successfully!"), () => alert("Failed to send message. Try again later."));
+  //   e.target.reset();
+  // });
 
   // FAQ accordion
   document.querySelectorAll(".question").forEach(q => {
